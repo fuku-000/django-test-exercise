@@ -18,7 +18,7 @@ def index(request):
         tasks = Task.objects.order_by('-posted_at')
         
         
-        context = {
+    context = {
         'tasks': tasks
     }
         
