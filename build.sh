@@ -3,5 +3,5 @@ set -o errexit
 
 pip install -r requirements.txt
 
-python manege.py coollectstatic --no-input
+python manage.py coollectstatic --no-input
 python manage.py migrate
