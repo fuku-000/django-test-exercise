@@ -6,7 +6,7 @@ databases:
 
 services:
   - type: web
-    name: django-django-5
+    name: django-django-ufufu-5
     env: python
     plan: free
     branch: main
