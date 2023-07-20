@@ -31,6 +31,13 @@
       <a href="{% url 'index' %}?order=due">Sort by Due Date</a> |
       <a href="{% url 'index' %}?order=post">Sort by Posted Date</a>
     </div>
+    <br>
+    
+    <div>
+      <label for="searchInput">Search:</label>
+      <input id="searchInput" type="text" placeholder="Enter keyword">
+      <button type="button" onclick="searchTasks()">Search</button>
+    </div>
 
     {% for task in tasks %}
     <div class="text">
@@ -48,6 +55,21 @@
       </ul>
     </div>
     {% endfor %}
+
+    <script>
+      function searchTasks() {
+        const keyword = document.getElementById("searchInput").value;
+        const tasks = document.querySelectorAll(".text");
+        tasks.forEach(task => {
+          const title = task.querySelector("h2").innerText;
+          if (title.includes(keyword)) {
+            task.style.display = "block";
+          } else {
+            task.style.display = "none";
+          }
+        });
+      }
+    </script>
   </body>
 
 </html>
